@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   def dan
-    render json: { cool: true }
+    render json: { cool: true, awesome: true }
   end
 
   def index
