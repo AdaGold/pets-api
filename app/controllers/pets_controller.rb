@@ -1,4 +1,7 @@
 class PetsController < ApplicationController
+  def dan
+    render json: { cool: true }
+  end
 
   def index
     pets = Pet.all
