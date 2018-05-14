@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.2.4
+services:
+- postgresql
+before_script:
+- bin/rails db:create
+- bin/rails db:migrate
+deploy:
+  provider: heroku
+  api_key:
+    secure: K0/Axcs9eN9Hv/zgJ+mzZxDtkNbkbp770KGTbkzQ9Y5IknVU7oyLCXEVXOw9stDqz92N/qoSsppftfOa1N/PpUU1I7PyIOBCJvnoj2fPvopWVM3SMS5yoxIqwYYO99LlvXXgovf4GaA8NjXusLW+GB2mS2tPQHeve+G2jMcXd6Nbpd7QMlQ70cn+y2C2Ob/t6YhTvDZ3+mW88SU+iif+O+L0a7gQGhqxYqyeDaN4ERlw0gDY0djFXREcn+zDpDA5cgPuHPyd+IG445m6DQlJ6So5/BUs1r29/mSBEG1ExeYLRtCr5IA2Af86EhjFPoXzVR80fUMvLEchSIsuHvLYO7zfsYMF9vs0PnvNx8qbLTpAeLbFttVZRC7RmQ4IkevADvam0A/lk+p3jyqel2qJleFNhqM8n0nkke0bo9lz2yJevuqfSz//w8tehnydKHANmWOPE9ZAHwe9+mAJYr4IsPBHb4MXqIAugBx7019vEMq74TgdjDqjiH4iVGZO+b4GKbfCm+1xkHDqGdTAlD+k5n/FNzbPG15ZSc6FwWTFHfsY5gkns9PGl+PNHyTwKFjJBwK8bttv7QzzZJatpcgiVKKJzbaAB86ccvCDDrmK48jwoNZaaYY7USOLFf4LOoWG0eIIJ3ByB1eRMIBipoFmiJBC+beuIEnLyvViGTbROxo=
+  app: petdibs
+  on:
+    repo: AdaGold/pets_api
