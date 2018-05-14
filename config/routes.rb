@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :pets, except: [:update]
   put '/pets/:id/vaccinated', to: 'pets#vaccinated', as: 'vaccinated'
   put '/pets/:id/dibs', to: 'pets#dibs', as: 'dibs'
-  get '/dan', to: 'pets#dan', as: 'dan'
 end
