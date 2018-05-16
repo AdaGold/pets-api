@@ -25,6 +25,8 @@ class PetsController < ApplicationController
 
     if pet.save
       render :json => pet.to_json, :status => :ok
+    else
+      render :json => { :errors => pet.errors.messages }, :status => :bad_request
     end
   end
 
