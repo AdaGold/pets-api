@@ -6,8 +6,9 @@ API hosted on `petdibs.herokuapp.com`
 - `GET /pets` returns all pets
 - `GET /pets/1` returns information on specific pet, by id
 - `POST /pets` - Create a new pet
-  - Acceptable Params:
+  - Required Params:
     - name: string
+  - Acceptable Params:
     - breed: string
     - age: integer
     - about: string
