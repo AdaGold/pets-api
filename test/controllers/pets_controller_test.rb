@@ -40,6 +40,25 @@ describe PetsController do
       body[:id].must_equal Pet.last.id
     end
 
+    it "records all pet attributes" do
+      pet_data[:breed] = "test breed"
+      pet_data[:vaccinated] = true
+      pet_data[:about] = "test about"
+
+      Pet.new(pet_data).must_be :valid?
+      before_pet_count = Pet.count
+
+      post pets_path, params: pet_data
+
+      must_respond_with :success
+      Pet.count.must_equal before_pet_count + 1
+
+      created_pet = Pet.last
+      pet_data.each do |field, value|
+        created_pet[field].must_equal value
+      end
+    end
+
     it "fails gracefully with an invalid pet" do
       pet_data[:name] = nil
       p = Pet.new(pet_data)

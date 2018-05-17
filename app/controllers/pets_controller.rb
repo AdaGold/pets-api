@@ -15,13 +15,7 @@ class PetsController < ApplicationController
 
 
   def create
-    pet = Pet.new(
-      name: params[:name],
-      age: params[:age],
-      breed: params[:breed],
-      about: params[:about],
-      vaccinated: params[:vaccinated]
-    )
+    pet = Pet.new(pet_params)
 
     if pet.save
       render :json => pet.to_json, :status => :ok
@@ -60,6 +54,11 @@ class PetsController < ApplicationController
     else
       render :json => [], :callback => params['callback'], :status => :no_content
     end
+  end
+
+  private
+  def pet_params
+    return params.permit(:name, :age, :owner, :vaccinated, :breed, :about)
   end
 
 end
