@@ -7,12 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+owners = ['Ada', 'Kari', 'Dee', 'Dan', 'Alexandra']
+
 
 20.times do
   Pet.create(
   name: Faker::Space.constellation,
   breed: "Cat",
-  age: Random.rand(18)
+  age: Random.rand(18),
+  owner: owners.sample
   )
 end
 
@@ -20,6 +23,7 @@ end
   Pet.create(
   name: Faker::Pokemon.name,
   breed: "Dog",
-  age: Random.rand(18)
+  age: Random.rand(18),
+  owner: owners.sample
   )
 end
