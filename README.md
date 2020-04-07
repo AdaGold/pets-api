@@ -3,9 +3,9 @@
 API hosted on `petdibs.herokuapp.com`
 
 ## Endpoints
-- `GET /pets` returns all pets
-- `GET /pets/1` returns information on specific pet, by id
-- `POST /pets` - Create a new pet
+- `GET /pets` Returns a list of all pets
+- `GET /pets/:pet_id` where `:pet_id` is a pet id, such as `1`. Returns information on specific pet, by id
+- `POST /pets` - Creates a new pet
   - Required Params:
     - name: string
   - Acceptable Params:
@@ -13,10 +13,10 @@ API hosted on `petdibs.herokuapp.com`
     - age: integer
     - about: string
     - vaccinated: boolean
-- `PUT /pets/1/vaccinated` - update status of vaccination of a specific pet, by id
+- `PUT /pets/1/vaccinated` - Updates status of vaccination of a specific pet, by id
   - Acceptable Params:
     - vaccinated: boolean
-- `PUT /pets/1/dibs` - update pet with owner, by pet id
+- `PUT /pets/1/dibs` - Update pet with owner, by pet id
   - Acceptable Params:
     - owner: string
-- `DELETE /pets/1` to delete a pet, by id
+- `DELETE /pets/:pet_id` where `:pet_id` is a pet id, such as `1`. Deletes a pet, by id
